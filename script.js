@@ -1,29 +1,22 @@
-var userInput = document.querySelector(".form-control")
-var hour = $("#experiment");
 var now = moment();
+var time = $(".day-increment").attr("data-time");
 
 //Current date will be displayed at the top 
 $("#currentDay").text(now.format("dddd, MMMM Do YYYY"));
 
 
 //When user clicks the "save" button, their input will be saved in local storage
-var buttonTest = $(".saveBtn").click(function() {
-    console.log(userInput.value);
-    localStorage.setItem("activities", userInput.value);
-    $(".form-control").value(localStorage.getItem("activities"));
+$(".saveBtn").click(function() {
+    localStorage.setItem("activities", $(".form-control").val())
 })
 
+// The next time the page loads, the user's input will remain 
+$(".form-control").val(localStorage.getItem("activities"));
 
-console.log(moment.parseZone());
 
-if(now.isAfter("2021-11-18", "hour")) {
-    $(".hour").addClass("future")
-}
 
-else{
-    $(".hour").addClass("past")
-}
 
-console.log(now.hour());
 
-console.log(hour.text);
+
+
+

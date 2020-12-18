@@ -29,7 +29,8 @@ $("#currentDay").text(now.format("dddd, MMMM Do YYYY"));
 
 //When user clicks the "save" button, their input will be saved in local storage
 $(".saveBtn").click(function() {
-    console.log($(this));
+    localStorage.setItem("task", $(this).prev().val());
+    $(this).prev().val((localStorage.getItem("task")));
 })
 
 

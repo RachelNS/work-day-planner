@@ -12,13 +12,13 @@ for(i=0; i < hourValues.length; i++){
     // console.log($(hourValues[i]).attr("data-time"));
 
     if(currentHour < $(hourValues[i]).attr("data-time")){
-        console.log("before")
+        $(hourValues[i]).next().addClass("future");
     }
     else if(currentHour===$(hourValues[i]).attr("data-time")){
-        console.log("during")
+        $(hourValues[i]).next().addClass("present");
     }
     else{
-        console.log("after")
+        $(hourValues[i]).next().addClass("past");
     }
 }
 
@@ -30,7 +30,7 @@ $("#currentDay").text(now.format("dddd, MMMM Do YYYY"));
 //When user clicks the "save" button, their input will be saved in local storage
 $(".saveBtn").click(function() {
     localStorage.setItem("task", $(this).prev().val());
-    $(this).prev().val((localStorage.getItem("task")));
+
 })
 
 

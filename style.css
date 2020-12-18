@@ -13,6 +13,15 @@ textarea{
   padding: 10px;
 }
 
+.col-11 {
+  display: flex;
+  justify-content: left;
+}
+
+.row {
+  margin-bottom: 25px;
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
